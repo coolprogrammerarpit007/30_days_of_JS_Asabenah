@@ -52,3 +52,54 @@ let startIndex = 'You cannot end a sentence with because because because is a co
 let endIndex = 'You cannot end a sentence with because because because is a conjunction'.lastIndexOf(`because`);
 // console.log('You cannot end a sentence with because because because is a conjunction'.match(/because/gi));
 // console.log('You cannot end a sentence with because because because is a conjunction'.substring());
+
+
+
+// ***************************************************
+// ***************************************************
+
+// Level-3 
+
+let quoteStr = `Love is the best thing in this world. Some found their love and some are still looking for their love. `;
+const loveArr = quoteStr.match(/LOVE/gi);
+// console.log(loveArr.length);
+let becauseStr = 'You cannot end a sentence with because because because is a conjunction';
+const becauseArr = becauseStr.match(/because/gi);
+// console.log(becauseArr.length);
+
+let sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching';
+sentence = sentence.replace(/[^a-zA-Z ]/g,''); // to remove special characters from the string
+// console.log(sentence);
+
+const sentenceArr = sentence.split(` `); // split string into array
+// console.log(sentenceArr);
+const newSentenceObj = {};
+
+// to count every word in the string.
+sentenceArr.forEach((word)=>{
+    if(word in newSentenceObj){
+        newSentenceObj[word]++;
+    }else{
+        newSentenceObj[word] = 1;
+    }
+});
+
+// console.log(newSentenceObj);
+
+// to count word which repeats maximum times.
+
+let maxCount = null;
+let maxWord;
+for (const key in newSentenceObj) {
+    if(maxCount === null || newSentenceObj[key] > maxCount){
+        maxCount = newSentenceObj[key];
+        maxWord = key;
+    }
+}
+
+// console.log(`The most frequent word is: ${maxWord} which repeats ${maxCount} times in the sentence!`);
+
+
+const totalIncomeStr =  'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+const numbers = totalIncomeStr.match(/\d+/g);
+// console.log(`His Total Income: ${(Number(numbers[0]) * 12) + (Number(numbers[1])) + (Number(numbers[2]) * 12)} `);
