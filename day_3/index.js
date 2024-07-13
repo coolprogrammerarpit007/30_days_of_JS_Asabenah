@@ -55,3 +55,47 @@ const now = new Date();
 // console.log(now.getHours());
 // console.log(now.getMinutes());
 // console.log(now.getTime());
+
+
+
+// Level 2 Exercises
+// let base = Number(prompt(`Enter Base: `));
+// let height = Number(prompt(`Enter Height: `));
+// let area = 0.5*(base*height);
+// console.log(`The area of triangle is: ${area}`);
+
+// let a = Number(prompt(`Enter Side a `));
+// let b = Number(prompt(`Enter Side b `));
+// let c = Number(prompt(`Enter Side c `));
+// console.log(`Perimeter of Triangle is: ${a+b+c}`);
+
+// let l = Number(prompt(`Enter length: `));
+// let w = Number(prompt(`Enter width: `));
+// console.log(`The area of rectangle is: ${2*(l+w)}`);
+
+// let r = Number(prompt(`Enter radius: `));
+// console.log(`Area of circle: ${(Math.PI)*(r)*(r)}`);
+
+// let x = Number(prompt(`Enter Slope X: `));
+// let y = Number(prompt(`Enter Slope Y: `));
+// console.log(`Slope:${(2*(x)) - 2}`);
+
+// let slope = (10-2)/(6-2);
+// console.log(`Slope: ${slope}`);
+// console.log(true);
+// let x = -3;
+// let y = Math.pow(x,2) + 6*x + 9;
+// console.log(y);
+
+
+// let hrs = Number(prompt(`Enter Hours:`))
+// let rate = Number(prompt(`Enter rate per hours:`));
+// console.log(`Weekly Earning: ${hrs*rate}`);
+
+// let bornYear = Number(prompt(`Enter birth year: `));
+// let isAllowed = (2024 - bornYear) >= 18 ? 'Allowed to drive' : 'Not Allowed';
+// console.log(isAllowed);
+
+
+const today = new Date();
+// let y
