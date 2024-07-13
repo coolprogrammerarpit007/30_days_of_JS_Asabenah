@@ -96,6 +96,14 @@ const now = new Date();
 // let isAllowed = (2024 - bornYear) >= 18 ? 'Allowed to drive' : 'Not Allowed';
 // console.log(isAllowed);
 
-
+// Level-3
 const today = new Date();
-// let y
+let year = today.getFullYear();
+let month = String(today.getMonth()).length > 1 ? today.getMonth() : '0' + today.getMonth();
+let day = String(today.getDate()).length > 1 ? today.getDate() : '0' + today.getDate();
+let hrs = String(today.getHours()).length > 1 ? today.getHours() : '0' + today.getHours();
+let Mins = String(today.getMinutes()).length > 1 ? today.getMinutes() : '0' + today.getMinutes();
+// console.log(year);
+// console.log(month);
+// console.log(day);
+console.log(`${year}-${month}-${day} ${hrs}:${Mins}`);
