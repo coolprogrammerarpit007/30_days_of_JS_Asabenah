@@ -97,3 +97,67 @@ const isGreater = a>b ? `${a} is greater than ${b}` : `${b} is greater than ${a}
 //     default:
 //         console.log(`Invalid Day`);
 // }
+
+
+// Level 3
+
+// check if a year is leap year
+// let flag = false;
+// const year = Number(prompt(`Enter year: `));
+// const month = prompt(`Enter Month: `).toLowerCase();
+
+// if(year % 100 === 0 ){
+//     if(year % 400 === 0){
+//         flag = true;
+//     }
+// }else if(year % 4 === 0){
+//     flag = true;
+// }else{
+//     flag = false;
+// }
+
+// let hasMonths = ``;
+// switch(month){
+//     case 'january':
+//         hasMonths = `january has 31 days.`
+//         break;
+//     case 'feburary':
+//         hasMonths = flag ? `feburary has 29 days.`: `january has 28 days.`;
+//         break;
+//     case 'march':
+//         hasMonths = `march has 31 days`;
+//         break;
+//     case 'april':
+//         hasMonths = `april has 30 days`;
+//         break;
+//     case 'may':
+//         hasMonths = `may has 31 days`;
+//         break;
+//     case 'june':
+//         hasMonths = ` june has 30 days`;
+//         break;
+//     case 'july':
+//         hasMonths = ` july has 31 days`; 
+//         break;
+//     case 'august':
+//         hasMonths = ` august has 31 days`;
+//         break;
+//     case 'september':
+//         hasMonths = ` september has 30 days`;
+//         break;
+//     case 'october':
+//         hasMonths = ` october has 31 days`;
+//         break;
+//     case 'november':
+//         hasMonths = ` november has 30 days`;   
+//         break;
+//     case 'december':
+//         hasMonths = ` december has 31 days`;
+//         break;
+//     default:
+//         console.log(`Enter a valid entery`);
+//         break;
+        
+// }
+
+// console.log(hasMonths);
