@@ -91,3 +91,52 @@ const backEnd = ['Node','Express', 'MongoDB'];
 const fullStack = [...frontEnd,...backEnd];
 // const fullStack =frontEnd.concat(backEnd);
 // console.log(fullStack);
+
+// **************************************************************
+// **************************************************************
+
+
+// Level 3
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+console.log(ages);
+const sortedArr = ages.sort((a,b) => a-b);
+let maxAge = null;
+let minAge = null;
+
+ages.forEach((age)=>{
+    if(maxAge === null || maxAge < age){
+        maxAge = age;
+    }
+    if(minAge === null || minAge > age){
+        minAge = age;
+    }
+});
+
+// console.log(maxAge);
+// console.log(minAge);
+// console.log(`Median Age: ${(ages[Math.floor(ages.length/2)])/2}`);
+const totalAge = ages.reduce((sum,age)=>{
+    return sum + age;
+},0);
+// console.log(totalAge/ages.length);
+// console.log(`Range: ${maxAge - minAge}`);
+// console.log(countries.slice(0,countries.length));
+// console.log(countries.length);
+
+if(countries.length % 2 !== 0){
+    countries.push(`India`);
+}
+const countries1 = [];
+const countries2 = [];
+
+countries.forEach((country,index)=>{
+    if(index < (countries.length)/2){
+        countries1.push(country);
+    }
+    else{
+        countries2.push(country);
+    }
+});
+
+// console.log(countries1);
+// console.log(countries2);
