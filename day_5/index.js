@@ -1,4 +1,6 @@
 `use strict`;
+import { countries } from "./countries.js";
+import { webTechs } from "./web_tech.js";
 
 // Exercise Level 1
 const arr = [];
@@ -42,3 +44,50 @@ itCompanies.forEach((company)=>{
 // itCompanies.splice(0);
 
 // console.log(itCompanies);
+
+// Level 2
+
+// console.log(countries);
+// console.log(webTechs);
+
+let text =
+'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+// console.log(text.split(` `).length);
+
+let shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+if(!(shoppingCart.includes(`Meat`))){
+    shoppingCart.unshift(`Meat`);
+}
+// console.log(shoppingCart);
+// const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+if(!(shoppingCart.includes(`Sugar`))){
+    shoppingCart.push(`Sugar`);
+}
+// console.log(shoppingCart);
+let isAlergic = true;
+let newShoppingCart = isAlergic ? shoppingCart.splice(shoppingCart.indexOf(`Honey`),1) : shoppingCart;
+// console.log(shoppingCart);
+
+shoppingCart[shoppingCart.indexOf(`Tea`)] = `Green Tea`;
+// console.log(shoppingCart);
+
+// countries.forEach((country)=>{
+//     if(country.toLowerCase() === `ETHIOPIA`.toLowerCase()){
+//         console.log(`ETHIOPIA`);
+//     }
+//     else{
+//         countries.push(`ETHIOPIA`);
+//     }
+// })
+
+// if(webTechs.includes(`Sass`)){
+//     console.log(`Sass`);
+// }else{
+//     webTechs.push(`Sass`);
+// }
+// console.log(webTechs);
+const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
+const backEnd = ['Node','Express', 'MongoDB'];
+const fullStack = [...frontEnd,...backEnd];
+// const fullStack =frontEnd.concat(backEnd);
+// console.log(fullStack);
