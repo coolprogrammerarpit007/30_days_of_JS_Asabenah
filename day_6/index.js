@@ -202,3 +202,17 @@ for(let str of mernStack){
 // const fruits = ['banana', 'orange', 'mango', 'lemon'] 
 // for(let i=fruits.length-1;i>=0;i--)
 //     console.log(fruits[i]);
+
+
+// Level 3
+const copiedCountries = [...countries];
+// console.log(copiedCountries);
+copiedCountries.sort();
+// console.log(copiedCountries);
+// console.log(countries);
+const capitalizeCountriesArray = [];
+countries.reverse();
+for(let country of countries){
+    capitalizeCountriesArray.push(country.toUpperCase());
+}
+// console.log(capitalizeCountriesArray);
