@@ -170,8 +170,8 @@ const sumNumbers = function (num) {
 const sumNumbersEven = function (num) {
   let total = 0;
   for (let i = 1; i <= num; i++) {
-    if(i % 2 === 0){
-        total += i;
+    if (i % 2 === 0) {
+      total += i;
     }
   }
 
@@ -183,8 +183,8 @@ const sumNumbersEven = function (num) {
 const sumNumbersOdd = function (num) {
   let total = 0;
   for (let i = 1; i <= num; i++) {
-    if(i % 2 !== 0){
-        total += i;
+    if (i % 2 !== 0) {
+      total += i;
     }
   }
 
@@ -195,57 +195,68 @@ const sumNumbersOdd = function (num) {
 // sumNumbersOdd(10)
 
 const sumNumbersOddAndEven = function (num) {
-    let countOdd = 0;
-    let countEven = 0;
-    for (let i = 0; i <= num; i++) {
-      if(i % 2 !== 0){
-          countOdd++;
-      }else{
-        countEven++;
-      }
+  let countOdd = 0;
+  let countEven = 0;
+  for (let i = 0; i <= num; i++) {
+    if (i % 2 !== 0) {
+      countOdd++;
+    } else {
+      countEven++;
     }
-  
-    console.log(countOdd,countEven);
-    // return total;
-  };
+  }
+
+  console.log(countOdd, countEven);
+  // return total;
+};
 
 //   sumNumbersOddAndEven(100);
 
-const totalArr = function(...arr){
-    let total = 0;
-    arr.forEach((num)=>{
-        total += num;
-    })
-    return total;
-}
+const totalArr = function (...arr) {
+  let total = 0;
+  arr.forEach((num) => {
+    total += num;
+  });
+  return total;
+};
 // console.log(totalArr(...[1, 2, 3]));
 // console.log(totalArr(...[1, 2, 3,4]));
 
 const str = `0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz`;
 const hexStr = `0123456789ABCDEF`;
-const generateIP = function(){
-    let num1 = Math.floor(Math.random() * 256);
-    let num2 = Math.floor(Math.random() * 256);
-    let num3 = Math.floor(Math.random() * 256);
-    let num4 = Math.floor(Math.random() * 256);
-    return `${num1}.${num2}.${num3}.${num4}`;
-}
+const generateIP = function () {
+  let num1 = Math.floor(Math.random() * 256);
+  let num2 = Math.floor(Math.random() * 256);
+  let num3 = Math.floor(Math.random() * 256);
+  let num4 = Math.floor(Math.random() * 256);
+  return `${num1}.${num2}.${num3}.${num4}`;
+};
 
 // console.log(generateIP());
 
-const ranomMacAddress = function(){
-    let str1 = `${str[Math.floor(Math.random()*str.length)]}${str[Math.floor(Math.random()*str.length)]}`.toUpperCase();
-    let str2 = `${str[Math.floor(Math.random()*str.length)]}${str[Math.floor(Math.random()*str.length)]}`.toUpperCase();
-    let str3 = `${str[Math.floor(Math.random()*str.length)]}${str[Math.floor(Math.random()*str.length)]}`.toUpperCase();
-    let str4 = `${str[Math.floor(Math.random()*str.length)]}${str[Math.floor(Math.random()*str.length)]}`.toUpperCase();
-    let str5 = `${str[Math.floor(Math.random()*str.length)]}${str[Math.floor(Math.random()*str.length)]}`.toUpperCase();
-    let str6 = `${str[Math.floor(Math.random()*str.length)]}${str[Math.floor(Math.random()*str.length)]}`.toUpperCase();
+const ranomMacAddress = function () {
+  let str1 = `${str[Math.floor(Math.random() * str.length)]}${
+    str[Math.floor(Math.random() * str.length)]
+  }`.toUpperCase();
+  let str2 = `${str[Math.floor(Math.random() * str.length)]}${
+    str[Math.floor(Math.random() * str.length)]
+  }`.toUpperCase();
+  let str3 = `${str[Math.floor(Math.random() * str.length)]}${
+    str[Math.floor(Math.random() * str.length)]
+  }`.toUpperCase();
+  let str4 = `${str[Math.floor(Math.random() * str.length)]}${
+    str[Math.floor(Math.random() * str.length)]
+  }`.toUpperCase();
+  let str5 = `${str[Math.floor(Math.random() * str.length)]}${
+    str[Math.floor(Math.random() * str.length)]
+  }`.toUpperCase();
+  let str6 = `${str[Math.floor(Math.random() * str.length)]}${
+    str[Math.floor(Math.random() * str.length)]
+  }`.toUpperCase();
 
-    return `${str1}:${str2}:${str3}:${str4}:${str5}:${str6}`;
-}
+  return `${str1}:${str2}:${str3}:${str4}:${str5}:${str6}`;
+};
 
 // console.log(ranomMacAddress());
-
 
 // const randomHexCode = function(){
 //     let hexCode = `#`;
@@ -257,12 +268,71 @@ const ranomMacAddress = function(){
 
 // console.log(randomHexCode());
 
-const randomuserId = function(){
-    let userId = ``;
-    for(let i=0;i<=6;i++){
-        userId += str[Math.floor(Math.random()*str.length)]
-    }
-    return userId;
-}
+const randomuserId = function () {
+  let userId = ``;
+  for (let i = 0; i <= 6; i++) {
+    userId += str[Math.floor(Math.random() * str.length)];
+  }
+  return userId;
+};
 
 // console.log(randomuserId());
+
+// Level 3
+
+const userIdGenerator = function () {
+    let num1 = 7;
+    let num2 = 5;
+    const randomIdArr = [];
+    let i = 0;
+    while (i < num2) {
+      let userId = ``;
+    for (let i = 0; i < num1; i++) {
+      userId += str[Math.floor(Math.random() * str.length)];
+    }
+    randomIdArr.push(userId);
+    i++;
+  }
+  return randomIdArr.join(` `);
+};
+
+// console.log(userIdGenerator());
+
+const rgbGenerator = function(){
+    let num1 = Math.floor(Math.random() * 256);
+    let num2 = Math.floor(Math.random() * 256);
+    let num3 = Math.floor(Math.random() * 256);
+
+    return `rgb(${num1},${num2},${num3})`;
+}
+
+// console.log(rgbGenerator());
+
+const randomHexColors = function () {
+    let num1 = 6;
+    let num2 = 5;
+    const randomHexArr = [];
+    let i = 0;
+    while (i < num2) {
+      let hexCode = `#`;
+    for (let i = 0; i < num1; i++) {
+      hexCode += hexStr[Math.floor(Math.random() * hexStr.length)];
+    }
+    randomHexArr.push(hexCode);
+    i++;
+  }
+  return randomHexArr.join(` `);
+};
+// console.log(randomHexColors());
+const randomRgbColors = function () {
+    let num = 6;
+    let rgbArr = [];
+    for(let i=0;i<num;i++){
+        let num1 = Math.floor(Math.random() * 256);
+        let num2 = Math.floor(Math.random() * 256);
+        let num3 = Math.floor(Math.random() * 256);
+        rgbArr.push(`rgb(${num1},${num2},${num3})`)
+    }
+    return rgbArr.join(` `);
+};
+// console.log(randomRgbColors());
