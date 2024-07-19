@@ -219,3 +219,178 @@ for(const user in users ){
 //     break;
 // }
 // console.log(userValues);
+
+
+const personalAccount = {
+    firstName:`Arpit`,
+    lastName:`Mishra`,
+    income:250000,
+    expanses:12000,
+    totalIncome:function(){
+        console.log(`Total Income is: ${this.income}`);
+    },
+    totalExpense:function(){
+        console.log(`Total Expense is: ${this.expanses}`);
+    },
+    addIncome:function(amt){
+        this.income += amt;
+    },
+    addExpanse:function(amt){
+        this.expanses -= amt;
+    },
+    totalBalance:function(){
+        console.log(`Total Balance is: ${this.income - this.expanses}`);
+    }
+}
+
+// console.log(personalAccount.income);
+// personalAccount.addIncome(35000);
+// console.log(personalAccount.income);
+// personalAccount.totalBalance()
+
+const users1 = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt:'08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt:'08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt:'08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt:'08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt:'08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+    ];
+
+    
+const signIn = function(users){
+    for(const user in users){
+        if(!(users[user][`isLoggedIn`])){
+            console.log(`User is now signed in`);
+            users[user][`isLoggedIn`] = true;
+        }
+        else{
+            console.log(`Already signed in!`);
+        }
+    }
+}
+
+// signIn(users1)
+
+let stringRand = `abcdefghijklmnopqrstuvwxyz0123456789`;
+const randomUserIdGenerator = function(){
+    let randomId = ``;
+    for(let i=0;i<6;i++){
+        randomId += stringRand[Math.floor(Math.random()*stringRand.length)];
+    }
+    return randomId;
+}
+
+const products = [
+    {
+      _id: 'eedfcf',
+      name: 'mobile phone',
+      description: 'Huawei Honor',
+      price: 200,
+      ratings: [
+        { userId: 'fg12cy', rate: 5 },
+        { userId: 'zwf8md', rate: 4.5 }
+      ],
+      likes: [],
+      rateProducts:function(rating){
+        this.ratings.push({userId:this._id,rate:rating})
+      },
+      averageRating:function(){
+        let sum = 0;
+        this.ratings.forEach((obj)=>{
+            sum += Number(obj.rate);
+        })
+        console.log(`Average Product Rating: ${sum/this.ratings.length}`);
+      },
+      getLikes:function(){
+        if(this.likes.length <= 0 ){
+            this.likes.push(this._id)
+        }
+        else{
+            this.likes.pop();
+        } 
+        return this.likes;
+      }
+    },
+    {
+      _id: 'aegfal',
+      name: 'Laptop',
+      description: 'MacPro: System Darwin',
+      price: 2500,
+      ratings: [],
+      likes: ['fg12cy'],
+      rateProducts:function(rating){
+        this.ratings.push({userId:this._id,rate:rating})
+      },
+      averageRating:function(){
+        let sum = 0;
+        this.ratings.forEach((obj)=>{
+            sum += Number(obj.rate);
+        })
+        console.log(`Average Product Rating: ${sum/this.ratings.length}`);
+      }
+    },
+    {
+      _id: 'hedfcg',
+      name: 'TV',
+      description: 'Smart TV:Procaster',
+      price: 400,
+      ratings: [{ userId: 'fg12cy', rate: 5 }],
+      likes: ['fg12cy'],
+      rateProducts:function(rating){
+        this.ratings.push({userId:this._id,rate:rating})
+      },
+      averageRating:function(){
+        let sum = 0;
+        this.ratings.forEach((obj)=>{
+            sum += Number(obj.rate);
+        })
+        console.log(`Average Product Rating: ${sum/this.ratings.length}`);
+      }
+    }
+  ]
+  
+
+//   for(const product of products){}
+
+// products[0].rateProducts(4.7);
+// console.log(products[0]);
+// Math.floor((products[0].averageRating())).toFixed(2);
+
+// console.log(products[0].getLikes());
+// console.log(products[0].getLikes());
+// console.log(products[0].getLikes());
