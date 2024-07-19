@@ -336,3 +336,219 @@ const randomRgbColors = function () {
     return rgbArr.join(` `);
 };
 // console.log(randomRgbColors());
+const hexaGenerator = function(num){
+  const hexStrCode = `0123456789ABCDEF`;
+  let hexStr = `#`;
+  const hexArr = [];
+  for(let i=0;i<num;i++){
+    for(let i=0;i<6;i++){
+      hexStr += hexStrCode[Math.floor(Math.random() * hexStrCode.length)];
+    }
+    // console.log(hexStr);
+    hexArr.push(hexStr);
+    hexStr = `#`;
+  }
+  return hexArr.length > 1 ? hexArr : hexArr.join(``);
+}
+
+const rgbColorGenerator = function(num){
+  const rgbArray = [];
+  for (let i=0;i<num;i++) {
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    rgbArray.push(`rgb(${red},${green},${blue})`);
+  }
+  return rgbArray.length > 1 ? rgbArray : rgbArray.join(``);
+}
+
+const generateColors = function(func,index){
+  const randomColor = func(index);
+  return randomColor;
+}
+
+// console.log(generateColors(hexaGenerator,2));
+// console.log(generateColors(rgbColorGenerator,5));
+
+
+const shuffleArray = function(arr){
+  for(let i=arr.length - 1;i>=0;i--){
+    let randomIndex = Math.floor(Math.random() * (i+1));
+    [arr[i],arr[randomIndex]] = [arr[randomIndex],arr[i]];
+  }
+  return arr;
+}
+// console.log(shuffleArray([1,2,3,4,5,6]));
+
+const factorial = function(number){
+  let fact = 1;
+  while(number > 0){
+    fact = fact * number;
+    number--;
+  }
+  return fact;
+}
+// console.log(factorial(10));
+
+
+const isEmpty = function(data){
+  let result;
+  if(data === null || data === undefined || data === ``){
+    result =  `Empty`
+  }
+
+  else if(Array.isArray(data)){
+    result = data.length > 0 ? `Not Empty` : `Empty`;
+  }
+  else if(data.constructor === Object){
+    result = Object.keys(data).length > 0 ? `Not Empty` : `Empty`
+  }
+  else{
+    result = `Non Empty`;
+  }
+  return result;
+}
+
+// console.log(isEmpty(5));
+
+
+const sumNumbersValue = function(num){
+  let total = 0;
+  for(let i=1;i<=num;i++){
+    total += num;
+  }
+  return total;
+}
+
+// console.log(sumNumbersValue(10));
+
+const sumOfArrayItems = function(...arr){
+  let total = 0;
+  let flag = false;
+  for(let num of arr){
+    if(isNaN(num)){
+      flag = true;
+      break;
+    }
+    total += num;
+  }
+  if(flag){
+    console.log(`Not Correct Value!`);
+  }
+  else{
+    console.log(total);
+  }
+}
+
+// sumOfArrayItems(1,2,78);
+
+const averageOfArrayItems = function(...arr){
+  let total = 0;
+  let flag = false;
+  for(let num of arr){
+    if(isNaN(num)){
+      flag = true;
+      break;
+    }
+    total += num;
+  }
+  if(flag){
+    console.log(`Not Correct Value!`);
+  }
+  else{
+    console.log(total/arr.length);
+  }
+}
+
+// averageOfArrayItems(2,2,56);
+
+const modifyArr = function(arr){
+  let isExist = 5 in arr;
+  if(isExist){
+    arr[5] = arr[5].toUpperCase();
+    console.log(arr);
+  }
+  else{
+    console.log(`Not Exist`);
+  }
+}
+
+// modifyArr(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot'])
+// modifyArr(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon'])
+
+
+const isPrime = function(num){
+  let flag = true;
+  for(let i=2;i<Math.pow(num,0.5);i++){
+    if(num % i === 0 ){
+      flag = false;
+    }
+  }
+  if(flag){
+    console.log(`Prime Number`);
+  }
+  else{
+    console.log(`Not Prime Number`);
+  }
+}
+
+// isPrime(2)
+// isPrime(3)
+// isPrime(5)
+// isPrime(7)
+// isPrime(1)
+// isPrime(4)
+// isPrime(6)
+// isPrime(8)
+// isPrime(11)
+// isPrime(13)
+// isPrime(17)
+// isPrime(36)
+// isPrime(37)
+// isPrime(729)
+
+
+const isUnique = function(arr){
+  let isUniqueArr = [];
+  let flag = false;
+  for(let num of arr){
+    if(isUniqueArr.includes(num)){
+      flag = true;
+      break;
+    }
+    else{
+      isUniqueArr.push(num)
+    }
+  }
+  if(flag){
+    console.log(`Not unique array`);
+  }
+  else{
+    console.log(`Unique Array`);
+  }
+}
+
+// isUnique([5,3,2,4,6])
+
+
+const sameDataType = function(arr){
+  let type = typeof arr[0];
+  let flag = true;
+  for(let num of arr){
+    if(typeof num !== type){
+      flag = false;
+      break;
+    }
+  }
+  if(flag){
+    console.log(`Same type`);
+  }
+  else{
+    console.log(`different type!`);
+  }
+}
+
+// sameDataType([1,2,3,4,5,`arpit`])
+// sameDataType([1,2,3,4,5,56])
+// sameDataType([1,2,3,4,5,[]])
+// sameDataType([1,2,3,4,5,{}])
