@@ -56,11 +56,19 @@ const total = numbersArr.reduce((acc,num)=> acc+num,0);
 // console.log(total);
 
 let str = `,`;
-const countryStr = countries.reduce((acc,country) => {
-    str = country + str;
-    return str;
+const countryStr = countries.reduce((acc,country,index,arr) => {
+    
+    if(index === 0){
+        return `${country}`
+    }
+    else if(index === countries.length-1){
+        return `${acc}, and ${country} are north european countries!`;
+    }
+    else{
+        return `${acc}, ${country}`;
+    }
 },"");
-// console.log(countryStr);
+console.log(countryStr);
 
 // console.log(names.some((name) => name.length >= 7));
 // console.log(countries.every(country => country.toLowerCase().includes(`land`)));
