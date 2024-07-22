@@ -112,7 +112,56 @@ const maxCountryCount = function(countries){
             maxAlphabet = country;
         }
     }
-    console.log(`${maxAlphabet} comses ${maxCount} times`);
+    // console.log(`${maxAlphabet} comses ${maxCount} times`);
 }
 
-maxCountryCount(countries);
+// maxCountryCount(countries);
+
+// *******************************************************
+// *******************************************************
+
+// Level 3
+
+// sorting countries data on the basis of country
+const countriesData = [
+    {country: 'China', capital:'Bejjing',population: 1377422166},
+    {country: 'India', capital:'New Delhi',population: 1295210000},
+    {country: 'United States of America', capital:'Washington DC',population: 323947000},
+    {country: 'Indonesia', capital:'Jakarta',population: 258705000},
+    {country: 'Brazil', capital:'Brasília',population: 206135893},
+    {country: 'Pakistan', capital:'Islamabad',population: 194125062},
+    {country: 'Nigeria', capital:'Abuja',population: 186988000},
+    {country: 'Bangladesh', capital:'Dhaka',population: 161006790},
+    {country: 'Russian Federation', capital:'Mosko',population: 146599183},
+    {country: 'Japan', capital:'Tokyo',population: 126960000}
+    ]
+
+    // countriesData.sort((a,b)=>{
+    //     if(a.country < b.country){
+    //         return -1;
+    //     }
+    //     else{
+    //         return 1;
+    //     }
+    // });
+
+    // Now Sorting on the basis of capital
+    // countriesData.sort((a,b)=>{
+    //     if(a.capital < b.capital){
+    //         return -1;
+    //     }
+    //     else{
+    //         return 1;
+    //     }
+    // });
+    
+    countriesData.sort((a,b)=>{
+        if(a.population < b.population){
+            return -1;
+        }
+        else{
+            return 1;
+        }
+    });
+
+    // console.log(countriesData);
