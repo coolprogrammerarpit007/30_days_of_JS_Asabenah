@@ -45,4 +45,36 @@ const B = new Set(b);
 const c = a.filter(num => !(B.has(num)));
 // console.log(new Set(c));
 
+// Exercise Level 3
+const languageData = [
+    { country: "English", count: 91 },
+    { country: "French", count: 45 },
+    { country: "Arabic", count: 25 },
+    { country: "Spanish", count: 24 },
+    { country: "Russian", count: 9 },
+    { country: "Portuguese", count: 9 },
+    { country: "Dutch", count: 8 },
+    { country: "German", count: 7 },
+    { country: "Chinese", count: 5 },
+    { country: "Swahili", count: 4 },
+  ];
 
+  const setOfLanguageData = new Set(languageData);
+//   console.log(setOfLanguageData.size);
+
+const mostSpokenLanguages = (data,num)=>{
+    data.sort((a,b)=> a.count < b.count ? 1 : -1);
+    const newData = data.map((item,index)=>{
+        if(index >= num){
+
+        }
+        else{
+            return item;
+        }
+    })
+    let newDataSet = new Set(newData);
+    newDataSet.delete(undefined);
+    console.log(newDataSet);
+    
+}
+// mostSpokenLanguages(languageData,3)
