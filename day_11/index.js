@@ -162,6 +162,16 @@ const rectangleObj = {
 
 //   Destructure the rectangle object by its properties or keys.
 const {width:w,height:h,area:a,perimeter:p} = rectangleObj;
-console.log(w,h,a,p);
+// console.log(w,h,a,p);
 
+// Level 2
 
+// for(const {name,scores,skills,age} of users){
+//     console.log(name,scores,skills,age);
+// }
+
+// users.forEach((user)=>{
+//     if(user.skills.length < 2){
+//         console.log(user);
+//     }
+// })
